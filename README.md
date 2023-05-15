@@ -5,4 +5,4 @@
 frontend https://movies.practicum.nomoredomains.monster
 
 
-https://api.nomoreparties.co/beatfilm-movies
+ссылка на макет https://disk.yandex.ru/d/6S9EoaDJrmEo5w
