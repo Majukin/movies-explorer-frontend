@@ -18,3 +18,10 @@
     max-width: 668px;
   }
 }
+
+@media screen and (max-width: 320px) {
+  .title-line__title {
+    font-size: 18px;
+    line-height: 22px;
+  }
+}

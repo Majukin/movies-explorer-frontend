@@ -132,7 +132,11 @@
     padding: 70px 18px;
     background-color: white;
   }
-
+  .stack {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 84px;
+    justify-content: center;
+  }
   .decription {
     margin: 60px 0 50px 0;
   }

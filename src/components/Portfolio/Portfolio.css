@@ -27,7 +27,8 @@
   border-bottom: 1px #E8E8E8 solid;
   display: flex;
   justify-content: space-between;
-
+  text-decoration: none;
+  color: #000000;
 }
 
 .list-site__title_not-line {

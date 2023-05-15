@@ -9,19 +9,18 @@ function Portfolio() {
         Портфолио
       </h6>
       <ul className='list-site'>
-        <li  className='list-site__title'>
+        <a className='list-site__title' href='https://github.com/Majukin/how-to-learn' target='_blank'>
           Статичный сайт
-          <a className='list-site__link' href='https://github.com/Majukin/how-to-learn'>&#8599;</a>
-        </li>
-
-        <li  className='list-site__title'>
+          <a className='list-site__link' href='https://github.com/Majukin/how-to-learn' target='_blank'>&#8599;</a>
+        </a>
+        <a className='list-site__title' href='https://github.com/Majukin/russian-travel' target='_blank'>
           Адаптивный сайт
-          <a className='list-site__link' href='https://github.com/Majukin/russian-travel'>&#8599;</a>
-        </li>
-        <li  className='list-site__title list-site__title_not-line'>
+          <a className='list-site__link' href='https://github.com/Majukin/russian-travel' target='_blank'>&#8599;</a>
+        </a>
+        <a className='list-site__title list-site__title_not-line' href='https://github.com/Majukin/react-mesto-api-full-gha' target='_blank'>
           Одностраничное приложение
-          <a className='list-site__link' href='https://github.com/Majukin/react-mesto-api-full-gha'>&#8599;</a>
-        </li>
+          <a className='list-site__link' href='https://github.com/Majukin/react-mesto-api-full-gha' target='_blank'>&#8599;</a>
+        </a>
       </ul>
     </section>
 
