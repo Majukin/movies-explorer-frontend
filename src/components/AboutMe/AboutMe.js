@@ -23,7 +23,7 @@ function AboutMe() {
           </p>
           <ul className='link'>
             <li>
-              <a className='link__item' href='https://github.com/Majukin'>
+              <a className='link__item' href='https://github.com/Majukin' target='_blank'>
                 Github
               </a>
             </li>

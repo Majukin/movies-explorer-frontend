@@ -1,6 +1,6 @@
 .promo {
   background-color: #F5F5F5;
-  padding: 150px 0 3px;
+  padding: 150px 0 30px;
   display: flex;
   justify-content: space-between;
   flex-direction: row;
@@ -55,7 +55,7 @@
   padding-left: 0;
   display: flex;
   margin: auto;
-  margin-top: 290px;
+  margin-top: 50px;
 }
 
 @media screen and (max-width: 800px) {
@@ -73,16 +73,17 @@
     line-height: 50px;
     text-align: center;
     margin: 48px 0 22px 0;
-    margin-bottom: -80px;
+    margin-bottom: 265px;
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 450px) {
   .promo {
     padding: 60px 10px 15px 10px;
     margin: 0;
     margin-top: 30px;
     margin-left: 10px;
+    margin-right: 10px;
   }
 
 .table__item {
@@ -95,8 +96,9 @@
 
   .promo__title {
     max-width: 292px;
-    font-size: 30px;
-    line-height: 38px;
+    font-size: 29px;
+    line-height: 37px;
     margin-top: 160px;
+    margin-bottom: 160px;
   }
 }

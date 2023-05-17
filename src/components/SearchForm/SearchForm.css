@@ -36,6 +36,7 @@
   height: 34px;
   margin: 0 19px 0 21px;
   border: none;
+  cursor: pointer;
 }
 
 .search-form__form-line {

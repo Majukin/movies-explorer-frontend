@@ -17,11 +17,11 @@ function Auth({ title, children, email, button, text, link, auth }) {
         <form className='auth__form' type='submit'>
           {children}
           <label for='email' className='auth__label'>E-mail</label>
-          <input id='email' type='email' className='auth__input' value={email} required />
+          <input id='email' type='email' className='auth__input' value={email} required placeholder="Email"/>
           <span className='error' id='email-error'></span>
 
           <label for='password' className='auth__label'>Пароль</label>
-          <input id='password' type='password' className='auth__input' required />
+          <input id='password' type='password' className='auth__input' required placeholder="Пароль" />
           <span className='error' id='password-error'></span>
 
           <button className='auth__button'>{button}</button>

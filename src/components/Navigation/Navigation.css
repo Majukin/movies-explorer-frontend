@@ -63,7 +63,7 @@
   min-height: 18px;
 }
 
-.navigation__pages_view_mobile {
+.navigation__pages-mobile {
   display: none;
 }
 
@@ -114,7 +114,7 @@
     display: none;
   }
 
-  .navigation__pages_view_mobile {
+  .navigation__pages-mobile {
     padding-left: 0;
     display: flex;
     flex-direction: column;
@@ -129,7 +129,7 @@
 
   }
 
-  .navigation__pages_view_mobile-active {
+  .navigation__pages-mobile_active {
     box-shadow: 0px 0px 600px 600px rgb(0, 0, 0, .3);
     transition: box-shadow .3s linear;
     height: 1024px;
@@ -195,7 +195,7 @@
     margin: 6px 0;
   }
 
-  .navigation__pages_view_mobile {
+  .navigation__pages-mobile {
     right: 0px;
     top: 0px;
     width: 320px;

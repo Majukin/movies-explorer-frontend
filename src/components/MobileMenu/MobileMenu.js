@@ -13,8 +13,7 @@ function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
 
   const wrightIcon = !isOpen ? burgerButton : closeBurgerButton;
-  const classes = `${isOpen ? 'navigation__pages_view_mobile navigation__pages_view_mobile-active' : 'navigation__pages_view_mobile'}`;
-
+  const classes = `${isOpen ? 'navigation__pages-mobile navigation__pages-mobile_active' : 'navigation__pages-mobile'}`;
   const handleBurgerClick = () => setIsOpen(!isOpen);
   const closeBurgerMenu = () => setIsOpen(false);
   return (
