@@ -1,104 +1,73 @@
 .promo {
-  background-color: #F5F5F5;
-  padding: 150px 0 30px;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-  border-radius: 10px;
-  max-width: 1205px;
-  margin: auto;
-} 
-
-.promo__text-container {
+  margin: 20px 40px 0 40px;
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
+  border-radius: 10px;
+  align-items: center;
 }
 
 .promo__title {
+  padding: 160px 0 155px;
+  text-align: center;
   max-width: 730px;
-  font-size: 50px;
-  line-height: 58px;
-  font-weight: 400;
-  margin: 0 0 100px 0;
-  text-align: center;
-  letter-spacing: -0.04em;
 }
 
-.table__item{
-  width: 96px;
-  padding-top: 7px;
-  padding-bottom: 10px;
-  background-color: #E8E8E8;
-  text-align: center;
-  margin-right: 10px;
-  border-radius: 10px;
-}
-
-.table__item:last-child{
-  margin-right: 0;
-}
-
-.promo__link {
-  text-decoration: none;
+.promo__list {
   margin: 0;
-  color: #000000;
-  background-color: #E8E8E8;
+  padding: 0;
+  padding-bottom: 30px;
+  list-style-type: none;
+  display: flex;
+  gap: 10px;
+}
+
+.promo__list-item {
+  padding: 10px 0;
+  width: 96px;
+  max-height: 36px;
+  height: 100%;
+  text-align: center;
+  border-radius: 10px;
+  box-sizing: border-box;
+  cursor: pointer;
+  font-weight: 500;
   font-size: 12px;
   line-height: 16px;
-  font-weight: 500;
-  text-align: left;
+  transition: opacity 0.6s;
+  text-decoration: none;
+  color: black;
 }
 
-.promo__links {
-  list-style-type: none;
-  padding-left: 0;
-  display: flex;
-  margin: auto;
-  margin-top: 50px;
+.promo__list-item:hover {
+  opacity: 0.6;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 768px) {
   .promo {
-    padding: 305px 44px 10px 44px;
     margin: 20px 20px 20px;
-    flex-direction: column-reverse;
-    justify-content: center;
-    align-items: center;
   }
 
   .promo__title {
-    max-width: 680px;
-    font-size: 40px;
-    line-height: 50px;
-    text-align: center;
-    margin: 48px 0 22px 0;
-    margin-bottom: 265px;
+    padding: 350px 20px 310px 20px;
   }
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 375px) {
   .promo {
-    padding: 60px 10px 15px 10px;
-    margin: 0;
-    margin-top: 30px;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin: 14px 14px 0 14px;
   }
 
-.table__item {
-  width: 82px;
-  padding-top: 1px;
-  padding-bottom: 5px;
-  margin-right: 5px;
-  border-radius: 6px;
-}
-
   .promo__title {
-    max-width: 292px;
-    font-size: 29px;
-    line-height: 37px;
-    margin-top: 160px;
-    margin-bottom: 160px;
+    padding: 220px 0;
+  }
+
+  .promo__list {
+    padding-bottom: 10px;
+  }
+
+  .promo__list-item {
+    padding: 6px 0;
+    width: 80px;
+    border-radius: 6px;
   }
 }

@@ -1,112 +1,77 @@
 .footer {
+  margin: 0 auto;
   padding: 70px 70px 20px 70px;
+  display: flex;
+  flex-direction: column;
+  max-width: 1280px;
+  width: 100%;
+  box-sizing: border-box;
+  flex: 1;
+  justify-content: flex-end;
+  background-color: #FAFAFA;
 }
 
 .footer__title {
+  text-align: center;
+  font-weight: 500;
   font-size: 13px;
   line-height: 16px;
-  text-align: center;
-  color: #A0A0A0;
-  font-weight: 400;
-  max-width: 320px;
-  margin: 0 auto 20px;
 }
 
-.footer__line {
-  border-bottom: 1px #E8E8E8 solid;
-  max-width: 1140px;
-  margin-bottom: 20px;
-}
-
-.footer__list {
+.footer__row {
   display: flex;
   justify-content: space-between;
+  padding-top: 25px;
 }
 
-.footer__copyright {
+.footer__copyright{
+  margin: 0;
+  font-weight: 500;
   font-size: 13px;
   line-height: 16px;
-  font-weight: 400;
-  margin: 0;
 }
 
-.links {
-  list-style: none;
-  display: flex;
-  flex-direction: row;
+.footer__links {
+  list-style-type: none;
   padding: 0;
   margin: 0;
-}
-
-.links__item {
-  margin-right: 20px;
-}
-
-.links__item:last-child {
-  margin: 0;
-}
-
-.links__text {
-  text-decoration: none;
-  color: #000000;
+  display: flex;
+  gap: 20px;
+  font-weight: 500;
   font-size: 13px;
   line-height: 16px;
-  text-align: right;
-  font-weight: 400;
 }
 
 @media screen and (max-width: 768px) {
   .footer {
-    padding: 79px 30px 20px 30px;
-  }
-
-  .footer__line {
-    max-width: 708px;
+    padding: 80px 50px 20px 50px;
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 375px) {
   .footer {
-    padding: 70px 10px 10px;
+    padding: 60px 10px 10px 10px;
+    background-color: #FFFFFF;
   }
 
   .footer__title {
+    font-weight: 400;
     font-size: 12px;
     line-height: 15px;
-    max-width: 300px;
-    margin: 0 0 21px;
   }
-
-  .footer__line {
-    max-width: 300px;
-    margin-bottom: 30px;
-  }
-
-  .footer__list {
-    justify-content: center;
-    align-items: center;
+  .footer__row {
+    margin-top: 10px;
     flex-direction: column-reverse;
-  }
-
-  .links {
+    gap: 30px;
     align-items: center;
-    justify-content: center;
   }
 
-  .links__item {
-    margin-right: 0;
-    margin-bottom: 12px;
-  }
-
-  .links__text {
+  .footer__links {
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    font-weight: 400;
     font-size: 12px;
     line-height: 15px;
-  }
-
-  .footer__copyright {
-    font-size: 12px;
-    line-height: 15px;
-    margin-top: 30px;
-    color: #A0A0A0;
   }
 }
