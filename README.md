@@ -8,6 +8,6 @@ Frontend https://movies.practicum.nomoredomains.monster
 
 Backend https://api.movies.practicum.nomoredomains.monster
 
-Ссылка на pull request:
+Ссылка на pull request: https://github.com/Majukin/movies-explorer-frontend/pull/2
 
 
