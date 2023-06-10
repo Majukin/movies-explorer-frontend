@@ -1,0 +1,38 @@
+.header {
+  padding: 45px 70px;
+}
+
+.header_type_loggedIn {
+  padding-top: 20px;
+}
+
+.header__content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.header__logo-link {
+  width: 38px;
+  height: 38px;
+}
+
+.header__logo {
+  object-fit: cover;
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    padding: 18px 30px;
+  }
+}
+
+@media screen and (max-width:320px) {
+  .header {
+    margin-top: 20px;
+    padding: 1px 14px;
+  }
+}
