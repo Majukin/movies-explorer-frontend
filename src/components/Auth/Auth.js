@@ -1,0 +1,49 @@
+import { Link } from "react-router-dom";
+
+import logo from "../../images/logo.svg";
+
+import "./Auth.css";
+
+function Auth({
+  title,
+  children,
+  button,
+  text,
+  link,
+  auth,
+  onSubmit,
+  classNameButton,
+}) {
+  return (
+    <section className="auth">
+      <div className="auth__content">
+        <Link to="/" className="auth__logo-link">
+          <img className="auth__logo" alt="иконка сайта" src={logo} />
+        </Link>
+
+        <h1 className="auth__success">{title}</h1>
+
+        <form
+          className="auth__form"
+          type="submit"
+          onSubmit={onSubmit}
+          noValidate
+        >
+          {children}
+          <button className={`auth__button ${classNameButton}`}>
+            {button}
+          </button>
+        </form>
+
+        <p className="auth__text">
+          {text}{" "}
+          <Link to={link} className="auth__link">
+            {auth}
+          </Link>
+        </p>
+      </div>
+    </section>
+  );
+}
+
+export default Auth;
