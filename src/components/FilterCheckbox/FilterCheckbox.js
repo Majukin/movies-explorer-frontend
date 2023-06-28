@@ -8,15 +8,24 @@ function FilterCheckbox({ filter, setFilter }) {
 
   function handleFilterClick() {
     setFilter((filter) => !filter);
-    localStorage.setItem(location.pathname, !filter);
+    location.pathname === "/movies" &&
+      localStorage.setItem(location.pathname, !filter);
   }
 
   useEffect(() => {
-    const filterStatus = JSON.parse(localStorage.getItem(location.pathname));
-    setFilter(filterStatus);
-
+    if (location.pathname === "/movies") {
+      const filterStatus = JSON.parse(localStorage.getItem(location.pathname));
+      setFilter(filterStatus);
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filter]);
+
+  useEffect(() => {
+    if (location.pathname !== "/movies") {
+      setFilter(false);
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div className="checkbox">

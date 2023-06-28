@@ -45,7 +45,7 @@ class Api {
     };
 
     addSavedMovies(data) {
-        return fetch(`${this.options}/movies`, {
+        return fetch(`${this.options}/movies/`, {
             method: 'POST',
             headers: {
                 ...this._headers,

@@ -19,7 +19,7 @@ function Movies({
   searchTag,
 }) {
   const [index, setIndex] = useState(12);
-
+  
   useEffect(() => {
     if (width > 768) {
       setIndex(12);

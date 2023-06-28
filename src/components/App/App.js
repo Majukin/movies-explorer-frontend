@@ -62,16 +62,16 @@ function App() {
 
   // eslint-disable-next-line no-unused-vars
   const [formMessageError, setFormMessageError] = useState("");
-  
+
   useEffect(() => {
     tokenCheck();
     setIsAppReady(true);
-
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
     if (token) localStorage.setItem("jwt", token);
+    setIsAppReady(true);
   }, [token]);
 
   useEffect(() => {
@@ -101,14 +101,12 @@ function App() {
       setIsLoading(false);
     }
   }, [allMovies, isAppReady, searchTag, token]);
-
   function tokenCheck() {
     const jwt = localStorage.getItem("jwt");
     const searchResultLS = localStorage.getItem("searchResult");
     const savedMoviesLS = localStorage.getItem("savedMovies");
     const allMoviesLS = localStorage.getItem("searchMovies");
     const searchTagSL = localStorage.getItem("searchTag");
-
     if (jwt) {
       setToken(jwt);
       if (searchResultLS) {
@@ -344,10 +342,23 @@ function App() {
 
   function onSignOut() {
     setLoggedIn(false);
-    localStorage.clear();
+    setCurrentUser({});
+    setToken(null);
     setSearchTag("");
     setAllMovies([]);
     setSearchResult([]);
+    setSavedMovies([]);
+    setIsInfoTooltip({
+      isOpen: false,
+      isSucess: true,
+      text: "",
+    });
+    setIsAppReady(false);
+    setFilter();
+    setProfileIsBeingEdited(false);
+    setSearchSaveResult([]);
+    setOnSearch();
+    localStorage.clear();
     navigate("/");
   }
 
@@ -435,7 +446,7 @@ function App() {
               </ProtectedRoute>
             }
           />
-          
+
           {loggedIn ? (
             <Route path="*" element={<NotFound />} />
           ) : (
