@@ -16,7 +16,7 @@ function MoviesCardList({
   const location = useLocation();
 
   const movieFilter = items.filter((item) => item.duration <= 40);
-  
+
   let renderСards = filter
     ? movieFilter.slice(0, index)
     : items.slice(0, index);
@@ -33,7 +33,6 @@ function MoviesCardList({
   function isDisabled() {
     return index > renderСards.length;
   }
-
   return (
     <>
       <ul className="cards">
@@ -49,28 +48,20 @@ function MoviesCardList({
       </ul>
 
       <div className="movies__container">
-        {location.pathname === "/saved-movies" && (
-          <button
-            className="movies__button movies__button_hidden"
-            type="button"
-            disabled={!renderСards.length}
-          >
-            Еще
-          </button>
-        )}
-
-        {location.pathname === "/movies" && (
-          <button
-            className={`movies__button 
+        {!!renderСards.length &&
+          renderСards.length === index &&
+          location.pathname === "/movies" && (
+            <button
+              className={`movies__button 
                 ${index > renderСards.length ? "movies__button_hidden" : ""}
                 `}
-            type="button"
-            onClick={addCards}
-            disabled={isDisabled()}
-          >
-            Еще
-          </button>
-        )}
+              type="button"
+              onClick={addCards}
+              disabled={isDisabled()}
+            >
+              Еще
+            </button>
+          )}
       </div>
     </>
   );
