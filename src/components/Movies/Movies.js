@@ -1,42 +1,74 @@
-import React from 'react';
-import './Movies.css';
+import { useEffect, useState } from "react";
 
-import SearchForm from '../SearchForm/SearchForm';
-import MoviesCardList from '../MoviesCardList/MoviesCardList';
-import Preloader from '../Preloader/Preloader';
+import SearchForm from "../SearchForm/SearchForm";
+import MoviesCardList from "../MoviesCardList/MoviesCardList";
+import Preloader from "../Preloader/Preloader";
 
-import MoviesCard from '../MoviesCard/MoviesCard';
+import "./Movies.css";
 
-import card1 from '../../images/pic__COLOR_pic.png';
+function Movies({
+  cards,
+  savedCards,
+  filter,
+  setFilter,
+  isLoading,
+  bookmarkClick,
+  deleteClick,
+  handleSearchSubmit,
+  width,
+  searchTag,
+  savedMoviesSearch
+}) {
+  const [index, setIndex] = useState(12);
+  
+  useEffect(() => {
+    if (width > 768) {
+      setIndex(12);
+    }
+    if (width <= 768 && width >= 330) {
+      setIndex(8);
+    }
+    if (width < 330) {
+      setIndex(5);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [width]);
 
-function Movies() {
-  const [loading, setLoading] = React.useState(false)
+  function addCards() {
+    if (width > 768) {
+      setIndex(index + 3);
+    }
+    if (width <= 768 && width >= 330) {
+      setIndex(index + 2);
+    }
+    if (width < 330) {
+      setIndex(index + 1);
+    }
+  }
 
-  const handleLoadClick = () => setLoading(!loading);
   return (
-    <section className='movies'>
-      <SearchForm />
-      <MoviesCardList>
-        <MoviesCard title='33 слова о дизайне' durationFilm='1ч 42м' classIcon='card__like-active' img={card1} />
-        <MoviesCard title='33 слова о дизайне' durationFilm='1ч 42м' classIcon='card__like-active' img={card1} />
-        <MoviesCard title='33 слова о дизайне' durationFilm='1ч 42м' classIcon='card__like-active' img={card1} />
-        <MoviesCard title='33 слова о дизайне' durationFilm='1ч 42м' classIcon='card__like-active' img={card1} />
-        <MoviesCard title='33 слова о дизайне' durationFilm='1ч 42м' classIcon='card__like-active' img={card1} />
-        <MoviesCard title='33 слова о дизайне' durationFilm='1ч 42м' classIcon='card__like-active' img={card1} />
-        <MoviesCard title='33 слова о дизайне' durationFilm='1ч 42м' classIcon='card__like-active' img={card1} />
-        <MoviesCard title='33 слова о дизайне' durationFilm='1ч 42м' classIcon='card__like-active' img={card1} />
-        <MoviesCard title='33 слова о дизайне' durationFilm='1ч 42м' classIcon='card__like-active' img={card1} />
-        <MoviesCard title='33 слова о дизайне' durationFilm='1ч 42м' classIcon='card__like-active' img={card1} />
-        <MoviesCard title='33 слова о дизайне' durationFilm='1ч 42м' classIcon='card__like-active' img={card1} />
-        <MoviesCard title='33 слова о дизайне' durationFilm='1ч 42м' classIcon='card__like-active' img={card1} />
-      </MoviesCardList>
-      <div className='movies__container'>
-        <button className='movies__button' type='button' onClick={handleLoadClick}>Еще</button>
-      </div>
-      {loading && <Preloader />}
+    <section className="movies">
+      <SearchForm
+        filter={filter}
+        setFilter={setFilter}
+        handleSearchSubmit={handleSearchSubmit}
+        searchTag={searchTag}
+        savedMoviesSearch={savedMoviesSearch}
+      />
 
+      {isLoading && <Preloader />}
+
+      <MoviesCardList
+        items={cards}
+        savedItems={savedCards}
+        filter={filter}
+        bookmarkClick={bookmarkClick}
+        deleteClick={deleteClick}
+        index={index}
+        addCards={addCards}
+      />
     </section>
-  )
+  );
 }
 
 export default Movies;

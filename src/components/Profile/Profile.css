@@ -1,12 +1,12 @@
 .profile {
-  padding: 45px 0 73px 0;
   display: flex;
   align-items: center;
   flex-direction: column;
-
+  padding-top: 45px;
+  padding: 45px 0 73px 0;
 }
 
-.profile__welcome {
+.profile__greetings {
   margin: 0;
   font-weight: 500;
   font-size: 24px;
@@ -22,15 +22,15 @@
 }
 
 .profile__label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-weight: 500;
   font-size: 11px;
   line-height: 13px;
   border-bottom: 1px solid #E8E8E8;
   padding-bottom: 16px;
   width: 410px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .profile__label_not-line {
@@ -60,14 +60,21 @@
   cursor: pointer;
 }
 
-.profile__link-signin {
-  text-decoration: none;
-  color: #FF4062;
+.disabled {
+  cursor: inherit;
+}
+
+.profile__exit {
   font-weight: 500;
   font-size: 13px;
   line-height: 16px;
   text-align: center;
+  text-decoration: none;
+  color: #FF4062;
   margin-top: 16px;
+  border: none;
+  cursor: pointer;
+  background: white;
 }
 
 @media screen and (max-width: 768px) {
@@ -75,7 +82,7 @@
     padding: 236px 0 269px 0;
   }
 
-  .profile__welcome {
+  .profile__greetings {
     margin-bottom: 96px;
   }
 
@@ -89,7 +96,7 @@
     padding: 70px 30px 40px 30px;
   }
 
-  .profile__welcome {
+  .profile__greetings {
     margin-bottom: 80px;
   }
 
@@ -106,7 +113,7 @@
     line-height: 15px;
   }
 
-  .profile__link-signin {
+  .profile__exit {
     font-size: 12px;
     line-height: 15px;
   }

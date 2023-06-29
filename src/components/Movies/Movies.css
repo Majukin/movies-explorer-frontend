@@ -1,5 +1,5 @@
 .movies {
-  padding: 40px 70px 80px;
+  padding: 40px 70px 300px;
 }
 
 @media screen and (max-width: 768px) {
@@ -28,7 +28,7 @@
   cursor: pointer;
   outline-style: none;
   background: #FFFFFF;
-  border: 1px solid rgba(0, 0, 0, 0.1);;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 6px;
   font-weight: 500;
   font-size: 12px;

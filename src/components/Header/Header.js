@@ -1,25 +1,27 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
-import './Header.css';
-import logo from '../../images/logo.svg';
-import Navigation from '../Navigation/Navigation';
+import Navigation from "../Navigation/Navigation";
 
+import logo from "../../images/logo.svg";
 
+import "./Header.css";
 
-function Header({ type }) {
+function Header({ type, loggedIn }) {
+  const headerModificator = loggedIn ? "header header_type_loggedIn" : "header";
+
   return (
-    <header className={`header header_type_${type}`}>
+    <header className={`header header_type_${headerModificator}`}>
       <nav className={`header__content header__content_type_${type}`}>
-        <Link to='/' className='header__logo-link'>
-          <img className='header__logo' alt='Логотип сайта' src={logo} />
+        <Link to="/" className="header__logo-link">
+          <img className="header__logo" alt="Логотип сайта" src={logo} />
         </Link>
-        {type !== 'loggedIn' && <Navigation />}
-        {type === 'loggedIn' && <Navigation type={type} />}
+
+        {loggedIn && <Navigation login={true} />}
+
+        {!loggedIn && <Navigation />}
       </nav>
     </header>
-  )
-};
-
+  );
+}
 
 export default Header;

@@ -1,9 +1,9 @@
 .header {
-  padding: 45px 70px;
+  padding: 18px 70px 40px;
 }
 
 .header_type_loggedIn {
-  padding-top: 20px;
+  background-color: white;
 }
 
 .header__content {
@@ -12,7 +12,6 @@
   justify-content: space-between;
   align-items: center;
 }
-
 
 .header__logo-link {
   width: 38px;
@@ -24,7 +23,7 @@
   width: 100%;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 800px) {
   .header {
     padding: 18px 30px;
   }

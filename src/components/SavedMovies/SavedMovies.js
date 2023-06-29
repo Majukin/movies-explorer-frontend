@@ -1,24 +1,39 @@
-import React from 'react';
-import './SavedMovies.css';
+import SearchForm from "../SearchForm/SearchForm";
+import MoviesCardList from "../MoviesCardList/MoviesCardList";
+import Preloader from "../Preloader/Preloader";
 
-import SearchForm from '../SearchForm/SearchForm';
-import MoviesCardList from '../MoviesCardList/MoviesCardList';
-import MoviesCard from '../MoviesCard/MoviesCard';
+import "./SavedMovies.css";
 
-import card1 from '../../images/pic__COLOR_pic.png';
-
-
-function SavedMovies() {
+function SavedMovies({
+  filter,
+  setFilter,
+  savedMovies,
+  deleteClick,
+  width,
+  searchSaveResult,
+  onSearch,
+  savedMoviesSearch,
+  isLoading,
+}) {
   return (
-    <section className='saved-movies'>
-      <SearchForm />
-      <MoviesCardList>
-        <MoviesCard title='33 слова о дизайне' durationFilm='1ч 42м' classIcon='card__delete-saved-film' img={card1} />
-        <MoviesCard title='33 слова о дизайне' durationFilm='1ч 42м' classIcon='card__delete-saved-film' img={card1} />
-        <MoviesCard title='33 слова о дизайне' durationFilm='1ч 42м' classIcon='card__delete-saved-film' img={card1} />
-      </MoviesCardList>
+    <section className="saved-movies">
+      <SearchForm
+        filter={filter}
+        setFilter={setFilter}
+        savedMoviesSearch={savedMoviesSearch}
+      />
+      
+      {isLoading && <Preloader></Preloader>}
+
+      <MoviesCardList
+        items={onSearch === undefined ? savedMovies : searchSaveResult}
+        savedItems={savedMovies}
+        filter={filter}
+        deleteClick={deleteClick}
+        width={width}
+      />
     </section>
-  )
+  );
 }
 
 export default SavedMovies;

@@ -1,30 +1,34 @@
-import React from 'react';
-import './Portfolio.css';
+import { portfolioList } from "../../utils/consts";
 
+import "./Portfolio.css";
 
 function Portfolio() {
   return (
-    <section className='portfolio'>
-      <h6 className='portfolio__title'>
-        Портфолио
-      </h6>
-      <ul className='list-site'>
-        <a className='list-site__title' href='https://github.com/Majukin/how-to-learn' target='_blank'>
-          Статичный сайт
-          <a className='list-site__link' href='https://github.com/Majukin/how-to-learn' target='_blank'>&#8599;</a>
-        </a>
-        <a className='list-site__title' href='https://github.com/Majukin/russian-travel' target='_blank'>
-          Адаптивный сайт
-          <a className='list-site__link' href='https://github.com/Majukin/russian-travel' target='_blank'>&#8599;</a>
-        </a>
-        <a className='list-site__title list-site__title_not-line' href='https://github.com/Majukin/react-mesto-api-full-gha' target='_blank'>
-          Одностраничное приложение
-          <a className='list-site__link' href='https://github.com/Majukin/react-mesto-api-full-gha' target='_blank'>&#8599;</a>
-        </a>
+    <section className="portfolio">
+      <h5 className="portfolio__title">Портфолио</h5>
+
+      <ul className="portfolio__links">
+        <li>
+          {portfolioList.map((item, index) => (
+            <a
+              className={
+                index === portfolioList.length - 1
+                  ? "portfolio__link portfolio__link_not-line"
+                  : "portfolio__link"
+              }
+              key={index}
+              href={item.href}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {item.value}
+              <span className="portfolio__link-arrow">&#8599;</span>
+            </a>
+          ))}
+        </li>
       </ul>
     </section>
-
-  )
+  );
 }
 
 export default Portfolio;

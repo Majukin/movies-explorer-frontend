@@ -1,16 +1,16 @@
 .search-form {
   display: flex;
   align-items: center;
-  border-radius: 9px;
   background-color: #F9F9F9;
+  border-radius: 9px;
 }
 
 .search-form__form {
+  display: flex;
+  align-items: center;
   background-color: #F9F9F9;
   border-radius: 9px;
   height: 72px;
-  display: flex;
-  align-items: center;
   width: 100%;
 }
 
@@ -21,10 +21,10 @@
 }
 
 .search-form__field-input-movie {
-  background-color: #F9F9F9;
   font-weight: 400;
   font-size: 18px;
   line-height: 20px;
+  background-color: #F9F9F9;
   border: none;
   width: 100%;
 
@@ -40,9 +40,9 @@
 }
 
 .search-form__form-line {
-  background-color: #CBCBCB;
   height: 40px;
   width: 1px;
+  background-color: #CBCBCB;
 }
 
 .line {

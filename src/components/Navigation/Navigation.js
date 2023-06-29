@@ -1,40 +1,39 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
-import './Navigation.css';
-import Nav from '../Nav/Nav';
-import MobileMenu from '../MobileMenu/MobileMenu';
+import Nav from "./Nav/Nav";
+import MobileMenu from "../MobileMenu/MobileMenu";
 
+import "./Navigation.css";
 
-
-function Navigation({ type }) {
+function Navigation({ login }) {
   return (
-    <>
-      {type !== 'loggedIn' &&
-        <li className='links'>
-          <Link to='/signup' className='links__signup'>
+    <div className="navigation">
+      {login ? (
+        <>
+          <Nav />
+
+          <MobileMenu />
+
+          <Link
+            className="navigation__button-account navigation__button-account_type_loggedIn"
+            to="/profile"
+          >
+            <p className="navigation__name">Аккаунт</p>
+          </Link>
+        </>
+      ) : (
+        <li className="links">
+          <Link to="/signup" className="links__signup">
             Регистрация
           </Link>
-          <Link to='/signin' className='links__signin'>
+
+          <Link to="/signin" className="links__signin">
             Войти
           </Link>
         </li>
-      }
-
-      {type === 'loggedIn' &&
-        <>
-          <Nav />
-          <MobileMenu />
-          <Link className={`navigation__button-account navigation__button-account_type_${type}`} to='/profile'>
-            <p className='navigation__name'>
-              Аккаунт
-            </p>
-          </Link>
-        </>
-      }
-
-    </>
-  )
+      )}
+    </div>
+  );
 }
 
 export default Navigation;

@@ -7,18 +7,21 @@
 }
 
 .auth__logo-link {
-  width: 38px;
-  height: 38px;
   display: flex;
   justify-content: center;
+  width: 38px;
+  height: 38px;
 }
 
-.auth__welcome {
-  margin: 40px 0 16px 0;
+.auth__success {
+  margin: 0;
   text-align: left;
   font-weight: 500;
   font-size: 24px;
   line-height: 29px;
+  margin-top: 40px;
+  margin-bottom: 16px;
+  text-align: left;
   max-width: 396px;
 }
 
@@ -38,52 +41,53 @@
 }
 
 .auth__input {
-  border: none;
-  outline: none;
   font-weight: 400;
   font-size: 14px;
   line-height: 17px;
+  border-bottom: 1px solid #E8E8E8;
+  border: none;
+  outline: none;
   margin-top: 5px;
   padding-bottom: 10px;
-  border-bottom: 1px solid #E8E8E8;
-}
-
-.auth__input:hover {
-  border-bottom: 1px solid black;
 }
 
 .error {
   font-weight: 400;
   font-size: 10px;
   line-height: 12px;
-  color: #FF4062;
   margin-top: 6px;
+  color: #FF4062;
 }
 
 .auth__button {
+  padding: 0;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: white;
+  background-color: #2BE080;
   margin-top: calc(65px + 69px);
   margin-bottom: 16px;
   width: 396px;
   height: 45px;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 17px;
   text-align: center;
-  color: white;
-  background-color: #2BE080;
   border: none;
-  padding: 0;
   border-radius: 3px;
   cursor: pointer
 }
 
+.button-disabled {
+  cursor: inherit;
+  opacity: .6;
+}
+
 .auth__text {
+  margin: 0;
   font-weight: 400;
   font-size: 14px;
   line-height: 17px;
   text-align: center;
   color: #A0A0A0;
-  margin: 0;
 }
 
 .auth__link {
@@ -95,9 +99,9 @@
   text-decoration: none;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 800px) {
   .auth {
-    padding: 232px 0;
+    padding: 230px 0;
   }
 }
 
@@ -111,18 +115,19 @@
     margin: 0 auto;
   }
 
-  .auth__welcome {
+  .auth__success {
+    margin-top: 56px;
+    margin-bottom: 56px;
     text-align: center;
     max-width: 260px;
-    margin: 50px 0 56px 0;
   }
 
   .auth__button {
+    font-size: 12px;
+    line-height: 15px;
     margin-top: calc(65px + 157px);
     margin-bottom: 14px;
     width: 100%;
-    font-size: 12px;
-    line-height: 15px;
   }
 
   .auth__text {

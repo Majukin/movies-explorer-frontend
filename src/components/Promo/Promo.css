@@ -1,78 +1,84 @@
 .promo {
-  background-color: #F5F5F5;
-  padding: 150px 0 30px;
   display: flex;
   justify-content: space-between;
   flex-direction: row;
-  border-radius: 10px;
-  max-width: 1205px;
+  background-color: #F5F5F5;
+  padding-top: 160px;
+  padding-bottom: 30px;
   margin: auto;
-} 
+  border-radius: 10px;
+  max-width: 1200px;
+}
 
 .promo__text-container {
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
 }
 
 .promo__title {
-  max-width: 730px;
+  margin: 0;
   font-size: 50px;
   line-height: 58px;
   font-weight: 400;
-  margin: 0 0 100px 0;
   text-align: center;
   letter-spacing: -0.04em;
+  max-width: 700px;
+  margin-bottom: 100px;
 }
 
-.table__item{
+.promo__list {
+  display: flex;
+  margin: 0;
+  padding-left: 0;
+  margin: auto;
+  margin-top: 50px;
+  list-style-type: none;
+}
+
+.promo__list-item {
+  margin: 0;
+  text-align: center;
+  background-color: #E8E8E8;
   width: 96px;
   padding-top: 7px;
   padding-bottom: 10px;
-  background-color: #E8E8E8;
-  text-align: center;
   margin-right: 10px;
   border-radius: 10px;
 }
 
-.table__item:last-child{
+.promo__list-item:last-child {
   margin-right: 0;
 }
 
 .promo__link {
-  text-decoration: none;
   margin: 0;
-  color: #000000;
-  background-color: #E8E8E8;
   font-size: 12px;
   line-height: 16px;
   font-weight: 500;
   text-align: left;
+  text-decoration: none;
+  color: #000000;
+  background-color: #E8E8E8;
 }
 
-.promo__links {
-  list-style-type: none;
-  padding-left: 0;
-  display: flex;
-  margin: auto;
-  margin-top: 50px;
-}
 
 @media screen and (max-width: 800px) {
   .promo {
-    padding: 305px 44px 10px 44px;
-    margin: 20px 20px 20px;
     flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
+    padding: 300px 44px 10px 44px;
+    margin: 20px 20px 20px;
   }
 
   .promo__title {
-    max-width: 680px;
+    margin: 0;
     font-size: 40px;
     line-height: 50px;
     text-align: center;
-    margin: 48px 0 22px 0;
+    max-width: 680px;
+    margin-top: 50px;
     margin-bottom: 265px;
   }
 }
@@ -81,18 +87,10 @@
   .promo {
     padding: 60px 10px 15px 10px;
     margin: 0;
-    margin-top: 30px;
+    margin-top: 15px;
     margin-left: 10px;
     margin-right: 10px;
   }
-
-.table__item {
-  width: 82px;
-  padding-top: 1px;
-  padding-bottom: 5px;
-  margin-right: 5px;
-  border-radius: 6px;
-}
 
   .promo__title {
     max-width: 292px;
@@ -100,5 +98,13 @@
     line-height: 37px;
     margin-top: 160px;
     margin-bottom: 160px;
+  }
+
+  .promo__list-item {
+    width: 82px;
+    padding-top: 1px;
+    padding-bottom: 5px;
+    margin-right: 5px;
+    border-radius: 6px;
   }
 }

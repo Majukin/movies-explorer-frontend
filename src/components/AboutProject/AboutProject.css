@@ -1,8 +1,23 @@
-.about-project {
-  padding: 110px 70px;
+.project {
+  padding: 106px 70px;
 }
 
-.about-project__description-project {
+.project__line__title {
+  font-size: 22px;
+  line-height: 27px;
+  font-weight: 400;
+  text-align: left;
+  max-width: 600px;
+  margin: 0 0 23px 0;
+  letter-spacing: -0.04em;
+}
+
+.project__line__line {
+  border-bottom: 1px black solid;
+  max-width: 1140px;
+}
+
+.project__description {
   display: flex;
   margin: 70px 0 110px 0;
 }
@@ -18,76 +33,79 @@
 }
 
 .diplom__subtitle {
+  margin: 0;
   font-size: 14px;
   line-height: 20px;
   font-weight: 400;
   text-align: left;
   max-width: 550px;
-  margin: 0;
+}
+
+.project__duration {
+  display: flex;
+}
+
+.project__duration__subtitle_back {
+  background-color: #2BE080;
+}
+
+.project__duration__subtitle_front {
+  background-color: #F5F5F5;
 }
 
 .indent {
   margin-left: 40px;
 }
 
-.progress-bar {
-  display: flex;
-  width: 100%;
-}
-
-.progress-bar__week {
+.project__duration__week {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
 }
 
-.progress-bar__week_active {
+.project__duration__week_active {
   flex-grow: 0.2;
   display: flex;
   flex-direction: column;
 }
 
-.progress-bar__subtitle {
-  margin: 0 0 14px 0;
-  color: black;
-  background-color: #2BE080;
-  font-size: 14px;
-  line-height: 17px;
-  font-weight: 400;
-  text-align: center;
-  height: 36px;
+.project__duration__subtitle {
+  margin: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 35px;
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 400;
+  color: black;
+  margin-bottom: 14px;
 }
 
-.progress-bar__title {
-  color: #A0A0A0;
+.project__duration__title {
   font-size: 14px;
   line-height: 17px;
   font-weight: 500;
   text-align: center;
-  margin: 0;
+  color: #A0A0A0;
 }
 
-.progress-bar__subtitle_front {
-  background-color: #F2F2F2;
-  color: black;
-
-}
-
-@media screen and (max-width: 768px) {
-  .about-project {
+@media screen and (max-width: 800px) {
+  .project {
     padding: 90px 50px;
   }
 
-  .about-project__description-project {
+  .project__line__line {
+    max-width: 668px;
+  }
+
+  .project__description {
     margin: 70px 0 93px 0;
   }
 
   .diplom__title {
     max-width: 319px;
-    margin: 0 0 22px 0;
+    margin-bottom: 22px;
   }
 
   .diplom__subtitle {
@@ -97,28 +115,33 @@
   }
 
   .indent {
-    margin-left: 30px;
+    margin-left: 40px;
   }
 
-  .progress-bar__title {
+  .project__duration__title {
     font-weight: 400;
   }
 }
 
-@media screen and (max-width: 320px) {
-  .about-project {
-    padding: 70px 18px;
+@media screen and (max-width: 350px) {
+  .project {
+    padding: 75px 18px;
   }
 
-  .about-project__description-project {
-    margin: 62px 0;
+  .project__line__title {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .project__description {
     flex-direction: column;
+    margin: 65px 0;
   }
 
   .diplom__title {
-    max-width: 284px;
     font-size: 18px;
     line-height: 22px;
+    max-width: 285px;
     margin: 0 0 16px 0;
   }
 
@@ -133,12 +156,12 @@
     max-width: 284px;
   }
 
-  .progress-bar__subtitle {
+  .project__duration__subtitle {
     font-size: 11px;
-    line-height: 13px;
+    line-height: 15px;
   }
 
-  .progress-bar__title {
+  .project__duration__title {
     font-weight: 400;
     font-size: 11px;
     line-height: 13px;

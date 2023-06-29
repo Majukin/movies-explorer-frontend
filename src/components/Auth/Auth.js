@@ -1,35 +1,49 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
-import './Auth.css';
+import logo from "../../images/logo.svg";
 
-import logo from '../../images/logo.svg'
+import "./Auth.css";
 
-function Auth({ title, children, email, button, text, link, auth }) {
-
+function Auth({
+  title,
+  children,
+  button,
+  text,
+  link,
+  auth,
+  onSubmit,
+  classNameButton,
+}) {
   return (
-    <section className='auth'>
-      <div className='auth__content'>
-        <Link to='/' className='auth__logo-link'>
-          <img className='auth__logo' alt='иконка сайта' src={logo} />
+    <section className="auth">
+      <div className="auth__content">
+        <Link to="/" className="auth__logo-link">
+          <img className="auth__logo" alt="иконка сайта" src={logo} />
         </Link>
-        <h1 className='auth__welcome'>{title}</h1>
-        <form className='auth__form' type='submit'>
+
+        <h1 className="auth__success">{title}</h1>
+
+        <form
+          className="auth__form"
+          type="submit"
+          onSubmit={onSubmit}
+          noValidate
+        >
           {children}
-          <label for='email' className='auth__label'>E-mail</label>
-          <input id='email' type='email' className='auth__input' value={email} required placeholder="Email"/>
-          <span className='error' id='email-error'></span>
-
-          <label for='password' className='auth__label'>Пароль</label>
-          <input id='password' type='password' className='auth__input' required placeholder="Пароль" />
-          <span className='error' id='password-error'></span>
-
-          <button className='auth__button'>{button}</button>
+          <button className={`auth__button ${classNameButton}`}>
+            {button}
+          </button>
         </form>
-        <p className='auth__text'>{text} <Link to={link} className='auth__link'>{auth}</Link></p>
+
+        <p className="auth__text">
+          {text}{" "}
+          <Link to={link} className="auth__link">
+            {auth}
+          </Link>
+        </p>
       </div>
     </section>
-  )
+  );
 }
 
 export default Auth;
