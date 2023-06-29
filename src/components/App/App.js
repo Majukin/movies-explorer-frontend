@@ -101,7 +101,20 @@ function App() {
       setIsLoading(false);
     }
   }, [allMovies, isAppReady, searchTag, token]);
-  function tokenCheck() {
+
+  useEffect(() => {
+    if (currentUser) {
+      async function fetchMyAPI() {
+        let getSavedMovies = await MainApi.getSavedMovies();
+        if (getSavedMovies) {
+          setSavedMovies(getSavedMovies);
+        }
+      }
+      fetchMyAPI();
+    }
+  }, [currentUser]);
+
+  async function tokenCheck() {
     const jwt = localStorage.getItem("jwt");
     const searchResultLS = localStorage.getItem("searchResult");
     const savedMoviesLS = localStorage.getItem("savedMovies");
@@ -109,6 +122,7 @@ function App() {
     const searchTagSL = localStorage.getItem("searchTag");
     if (jwt) {
       setToken(jwt);
+
       if (searchResultLS) {
         setSearchResult(JSON.parse(searchResultLS));
       }
@@ -270,7 +284,7 @@ function App() {
       setIsInfoTooltip({
         isOpen: true,
         isSucess: false,
-        text: error,
+        text: "Ошибка сохраненных фильмов",
       });
     }
   }
@@ -301,7 +315,7 @@ function App() {
       setIsInfoTooltip({
         isOpen: true,
         isSucess: false,
-        text: error,
+        text: "Ошибка удаления сохраненных фильмов",
       });
     }
   }
