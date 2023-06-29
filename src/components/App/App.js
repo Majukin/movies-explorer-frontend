@@ -379,7 +379,7 @@ function App() {
     setFilter();
     setProfileIsBeingEdited(false);
     setSearchSaveResult([]);
-    // setOnSearch();
+    setOnSearch();
     localStorage.clear();
     navigate("/");
   }
