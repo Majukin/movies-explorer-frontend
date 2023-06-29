@@ -103,13 +103,14 @@ function App() {
   }, [allMovies, isAppReady, searchTag, token]);
 
   useEffect(() => {
-    if (currentUser) {
+    if (Object.keys(currentUser).length) {
       async function fetchMyAPI() {
         let getSavedMovies = await MainApi.getSavedMovies();
         if (getSavedMovies) {
           setSavedMovies(getSavedMovies);
         }
       }
+
       fetchMyAPI();
     }
   }, [currentUser]);
@@ -284,7 +285,7 @@ function App() {
       setIsInfoTooltip({
         isOpen: true,
         isSucess: false,
-        text: "Ошибка сохраненных фильмов",
+        text: error,
       });
     }
   }
@@ -306,8 +307,15 @@ function App() {
             return true;
           }
         });
+        const newSavedSearchMovieList = searchSaveResult.filter(
+          (updateMovie) =>
+            !(
+              movie.id === updateMovie.movieId ||
+              movie.movieId === updateMovie.movieId
+            )
+        );
         setSavedMovies(newSavedMoviesList);
-        setSearchSaveResult(newSavedMoviesList);
+        setSearchSaveResult(newSavedSearchMovieList);
       } else {
         return false;
       }
@@ -315,7 +323,7 @@ function App() {
       setIsInfoTooltip({
         isOpen: true,
         isSucess: false,
-        text: "Ошибка удаления сохраненных фильмов",
+        text: error,
       });
     }
   }
@@ -371,7 +379,7 @@ function App() {
     setFilter();
     setProfileIsBeingEdited(false);
     setSearchSaveResult([]);
-    setOnSearch();
+    // setOnSearch();
     localStorage.clear();
     navigate("/");
   }

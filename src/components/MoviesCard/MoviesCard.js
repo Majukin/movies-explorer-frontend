@@ -11,7 +11,6 @@ function MoviesCard({ item, bookmarkClick, deleteClick }) {
   function handleDeleteSaveMovie() {
     deleteClick(item);
   }
-  
   return (
     <li className="card">
       <div className="card__discription">

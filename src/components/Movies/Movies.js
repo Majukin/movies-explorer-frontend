@@ -17,6 +17,7 @@ function Movies({
   handleSearchSubmit,
   width,
   searchTag,
+  savedMoviesSearch
 }) {
   const [index, setIndex] = useState(12);
   
@@ -52,6 +53,7 @@ function Movies({
         setFilter={setFilter}
         handleSearchSubmit={handleSearchSubmit}
         searchTag={searchTag}
+        savedMoviesSearch={savedMoviesSearch}
       />
 
       {isLoading && <Preloader />}

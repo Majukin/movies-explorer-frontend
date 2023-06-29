@@ -37,25 +37,15 @@ function MoviesCardList({
   return (
     <>
       <ul className="cards">
-        {location.pathname === "/movies"
-          ? renderСards.map((item) => (
-              <MoviesCard
-                key={item.id || item._id}
-                item={item}
-                saved={item.saved}
-                bookmarkClick={bookmarkClick}
-                deleteClick={deleteClick}
-              />
-            ))
-          : savedItems.map((item) => (
-              <MoviesCard
-                key={item.id || item._id}
-                item={item}
-                saved={item.saved}
-                bookmarkClick={bookmarkClick}
-                deleteClick={deleteClick}
-              />
-            ))}
+        {renderСards.map((item) => (
+          <MoviesCard
+            key={item.id || item._id}
+            item={item}
+            saved={item.saved}
+            bookmarkClick={bookmarkClick}
+            deleteClick={deleteClick}
+          />
+        ))}
       </ul>
 
       <div className="movies__container">
